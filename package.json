@@ -1,10 +1,10 @@
 {
   "name": "react-clip-path",
-  "version": "0.0.1",
-  "description": "Boilerplate project to publish a React component",
+  "version": "0.0.4",
+  "description": "react-clip-path is a simple React based package to create shapes using CSS clip-path.",
   "main": "index.js",
   "scripts": {
-    "build": "babel --ignore dist,node_modules,Base.js,Shape.js . --out-dir dist",
+    "build": "babel --ignore dist,node_modules,Shape.js . --out-dir dist",
     "build_component": "babel --ignore dist,node_modules,schema.js . --out-file index.js"
   },
   "dependencies": {
@@ -25,16 +25,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atapas/react-package-publisher.git"
+    "url": "git+https://github.com/atapas/react-clip-path"
   },
   "keywords": [
     "react",
-    "reactjs"
+    "reactjs",
+    "CSS",
+    "clip-path",
+    "shape",
+    "CSS3"
   ],
   "author": "Tapas Adhikary",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atapas/react-package-publisher.git/issues"
+    "url": "https://github.com/atapas/react-clip-path/issues"
   },
-  "homepage": "https://github.com/atapas/react-package-publisher.git#readme"
+  "homepage": "https://github.com/atapas/react-clip-path#readme"
 }
