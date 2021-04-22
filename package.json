@@ -4,8 +4,8 @@
   "description": "react-clip-path is a simple React based package to create shapes using CSS clip-path.",
   "main": "index.js",
   "scripts": {
-    "build": "babel --ignore dist,node_modules,Shape.js . --out-dir dist",
-    "build_component": "babel --ignore dist,node_modules,schema.js . --out-file index.js"
+    "build": "babel --ignore demo-app,dist,node_modules,Shape.js . --out-dir dist",
+    "build_component": "babel --ignore demo-app,dist,node_modules,schema.js . --out-file index.js"
   },
   "dependencies": {
     "styled-components": "^5.2.1"
