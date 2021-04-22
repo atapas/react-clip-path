@@ -129,7 +129,7 @@ function App() {
               </li>
               <li>
                 <span>
-                  <b>clip-path:</b> <code>{selectedShape.formula}</code>
+                  <b>clip-path:</b> <code><b>{selectedShape.formula}</b></code>
                 </span>
               </li>
             </ShapeDetails>
