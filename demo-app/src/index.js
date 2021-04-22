@@ -3,23 +3,50 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { Aperture } from 'react-feather';
 import styled from 'styled-components';
+import IconLink from './IconLink';
+
+import github from './github.png';
+import npm from './npm.png';
 
 const Heading = styled.span`
   vertical-align: middle;
   text-transform: uppercase;
 `;
 
+const iconLinks = [
+  {
+    'link': 'https://github.com/atapas/react-clip-path/tree/master/demo-app',
+    'icon': github,
+    'height': '55px',
+    'title': 'Source Code'
+  },
+  {
+    'link': 'https://www.npmjs.com/package/react-clip-path',
+    'icon': npm,
+    'height': '45px',
+    'title': 'Download the NPM Package'
+  }
+]
+
 ReactDOM.render(
   <React.StrictMode>
-  <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#home">
-      <Aperture />{' '}
-      <Heading>React Clip Path</Heading>
+    <Navbar bg="dark" variant="dark">
+      <Navbar.Brand href="#home">
+        <Aperture />{' '}
+        <Heading>React Clip Path</Heading>
       </Navbar.Brand>
+      <Nav className="mr-auto" />
+      {
+        iconLinks.map((item, index) => (
+          <IconLink key={index} info={item} />
+        ))
+      }
+      
     </Navbar>
     <App />
   </React.StrictMode>,
