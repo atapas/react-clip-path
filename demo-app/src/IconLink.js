@@ -3,7 +3,7 @@ import React from 'react';
 const IconLink = props => {
 
     return(
-        <a href={props.info.link} target="_blank">
+        <a href={props.info.link} target="_blank" rel="noreferrer">
             <img 
                 src={props.info.icon} 
                 alt={props.info.title} 

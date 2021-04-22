@@ -10,8 +10,8 @@ import { Aperture } from 'react-feather';
 import styled from 'styled-components';
 import IconLink from './IconLink';
 
-import github from './github.png';
-import npm from './npm.png';
+import github from './icons/github.png';
+import npm from './icons/npm.png';
 
 const Heading = styled.span`
   vertical-align: middle;
