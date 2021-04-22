@@ -9,6 +9,13 @@ You may need `react-clip-path` when,
 - You may want to create some custom shapes using a polygon, paths, etc.
 - You need to create shapes declaratively by extending the out-of-the-box schema.
 
+# 💻 Live Demo
+A Live demo of the component is available here, 💻 [CLICK FOR DEMO](https://react-clip-path.netlify.app/)
+
+## Demo Status on Netlify
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6c1a6fc5-7887-431f-ac7c-3c14135e5e6b/deploy-status)](https://app.netlify.com/sites/react-clip-path/deploys)
+
 # ⭐ Want to Motivate?
 Who doesn't need motivations? Please give the repository a start(⭐) to motivate.
 
