@@ -1,5 +1,5 @@
 # react-clip-path
-`react-clip-path` is a simple React-based package to create shapes declaratively using `CSS` clip-path property.
+`react-clip-path` is a React-based open-source project to create shapes declaratively using `CSS` clip-path property. It is available as NPM to download and install.
 
 # 🔥 Why do you need this?
 You may need `react-clip-path` when,
