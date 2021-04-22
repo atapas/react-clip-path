@@ -40,7 +40,7 @@ const Label = styled.span`
 
 const Shape = props => {
 
-    const backgroundColor = props.backgroundColor;
+    const backgroundColor = props.backgroundColor || '#12a8d6';
     const height = props.height;
     const width = props.width;
     const showShadow = props.showShadow;
