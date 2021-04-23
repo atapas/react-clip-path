@@ -9732,10 +9732,10 @@ react-bootstrap@^1.5.2:
     uncontrollable "^7.2.1"
     warning "^4.0.3"
 
-react-clip-path@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-clip-path/-/react-clip-path-0.0.1.tgz#2246f839632bf5cf2274048f69a51c0d1e7395bc"
-  integrity sha512-CPoMRw/oR2MvtAt2co4EgNhYMiSFWT/GAyy86lKMG1hy4f0ecA1ZGV1d9gz4eW9qbhm2g2gqn1RlTcb7JwA+Sg==
+react-clip-path@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/react-clip-path/-/react-clip-path-0.0.2.tgz#2dbb641f841d2a942e858833e58297aee9ad6eec"
+  integrity sha512-72g6W8pNRA4NqGaVpjiuRhspYx3FmpouPb199NfmzU4ULSA2xgNHMLBpA870XFsmLq+0mq7EHCTR5AJnyKh5UA==
   dependencies:
     styled-components "^5.2.1"
 
