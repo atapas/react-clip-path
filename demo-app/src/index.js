@@ -22,13 +22,13 @@ const iconLinks = [
   {
     'link': 'https://github.com/atapas/react-clip-path/tree/master/demo-app',
     'icon': github,
-    'height': '55px',
+    'height': '50px',
     'title': 'Source Code'
   },
   {
     'link': 'https://www.npmjs.com/package/react-clip-path',
     'icon': npm,
-    'height': '45px',
+    'height': '40px',
     'title': 'Download the NPM Package'
   }
 ]
