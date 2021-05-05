@@ -1,0 +1,80 @@
+import React from "react";
+import Form from "react-bootstrap/Form";
+
+function ClipPathPreviewForm(props) {
+    return(
+        <Form>
+            <Form.Group>
+                <Form.Label>Shape Name: </Form.Label>
+                <Form.Control 
+                    type="text" 
+                    name="name" 
+                    value={props.formInputs.name} 
+                    onChange={props.handleChange} 
+                />
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Description: </Form.Label>
+                <Form.Control 
+                    as="textarea" 
+                    name="notes" 
+                    value={props.formInputs.notes} 
+                    onChange={props.handleChange} 
+                />
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Type of Shape: </Form.Label>
+                <Form.Control 
+                    as="select" 
+                    name="typeOfShape" 
+                    value={props.formInputs.typeOfShape} 
+                    onChange={props.handleChange}
+                >
+                    <option value="polygon">Polygon</option>
+                    <option value="circle">Circle</option>
+                    <option value="ellipse">Ellipse</option>
+                    <option value="path">Path</option>
+                    <option value="inset">Inset</option>
+                </Form.Control>
+            </Form.Group>
+
+            {props.formInputs.typeOfShape === "polygon" ? 
+                <Form.Group>
+                    <Form.Label>Number of vertices/edges: </Form.Label>
+                    <Form.Control 
+                        type="number" 
+                        name="numberOfVerticesEdges" 
+                        value={props.formInputs.numberOfVerticesEdges} 
+                        onChange={props.handleChange} 
+                    />
+                </Form.Group> : 
+                null
+            }
+
+            <Form.Group>
+                <Form.Check 
+                    type="switch" 
+                    name="showShadow" 
+                    id="showShadowSwitch"
+                    label="Show Outside of the Clipped Area" 
+                    onChange={props.handleChange} 
+                />
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Type out clip path: </Form.Label>
+                <Form.Control 
+                    type="text" 
+                    name="formula" 
+                    size="sm"
+                    value={props.formInputs.formula} 
+                    onChange={props.handleChange} 
+                />
+            </Form.Group>
+        </Form>
+    );
+}
+
+export default ClipPathPreviewForm;
