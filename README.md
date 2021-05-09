@@ -74,6 +74,18 @@ This section provides details about the properties(props).
   </tr>
 
   <tr>
+    <td> formula </td>
+    <td> The shape's clip-path formula. Please pass a CSS clip-path value using inset, circle, ellipse, polygon</td>
+    <td> Yes - It is required if type is not passed.  </td>
+    <td>
+      <ul>
+        <li>circle(50% at 50% 50%)</li>
+        <li>polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%)</li>
+      </ul>
+    </td>
+  </tr>
+
+  <tr>
     <td> backgroundColor </td>
     <td> The color of the shape </td>
     <td> No </td>
