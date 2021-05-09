@@ -42,5 +42,5 @@ cd ..
 # 2. Using Intercative mode(Default) => npm login will ask for username, password and email
 #******************************************************************************************
 # npm-login-noninteractive -u <USER_NAME> -p <PASSWORD> -e <EMAIL>
-npm login
-yarn publish ./dist
+# npm login
+# yarn publish ./dist
