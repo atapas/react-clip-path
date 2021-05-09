@@ -1,6 +1,6 @@
 {
   "name": "react-clip-path",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "react-clip-path is a simple React based package to create shapes using CSS clip-path.",
   "main": "index.js",
   "scripts": {
