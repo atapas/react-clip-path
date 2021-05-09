@@ -46,7 +46,7 @@ const Shape = props => {
     const showShadow = props.showShadow;
     const shapeInfo = getShape(props.type);
     const formula = shapeInfo ? shapeInfo.formula : props.formula;
-    const text = props.text || shapeInfo.name;
+    const text = shapeInfo ? shapeInfo.name : props.text;
     const showLabel = props.showLabel;
 
     return (

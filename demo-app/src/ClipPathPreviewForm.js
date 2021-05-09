@@ -25,11 +25,11 @@ function ClipPathPreviewForm(props) {
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>Type of Shape: </Form.Label>
+                <Form.Label>Type of Clip Path: </Form.Label>
                 <Form.Control 
                     as="select" 
-                    name="typeOfShape" 
-                    value={props.formInputs.typeOfShape} 
+                    name="clipPathType" 
+                    value={props.formInputs.clipPathType} 
                     onChange={props.handleChange}
                 >
                     <option value="polygon">Polygon</option>
@@ -40,13 +40,20 @@ function ClipPathPreviewForm(props) {
                 </Form.Control>
             </Form.Group>
 
-            {props.formInputs.typeOfShape === "polygon" ? 
+            {props.formInputs.clipPathType === "polygon" ? 
                 <Form.Group>
-                    <Form.Label>Number of vertices/edges: </Form.Label>
+                    <Form.Label>Number of vertices: </Form.Label>
                     <Form.Control 
                         type="number" 
-                        name="numberOfVerticesEdges" 
-                        value={props.formInputs.numberOfVerticesEdges} 
+                        name="vertices" 
+                        value={props.formInputs.vertices} 
+                        onChange={props.handleChange} 
+                    />
+                    <Form.Label>Number of edges: </Form.Label>
+                    <Form.Control 
+                        type="number" 
+                        name="edges" 
+                        value={props.formInputs.edges} 
                         onChange={props.handleChange} 
                     />
                 </Form.Group> : 
