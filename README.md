@@ -19,6 +19,10 @@ A Live demo of the component is available here, 💻 [CLICK FOR DEMO](https://re
 # ⭐ Want to Motivate?
 Who doesn't need motivations? Please give the repository a star(⭐) to motivate.
 
+## Many Thanks to all the `Stargazers` who has supported this project with stars(⭐)
+
+[![Stargazers repo roster for @atapas/react-clip-path](https://reporoster.com/stars/atapas/react-clip-path)](https://github.com/atapas/react-clip-path/stargazers)
+
 # ⚒️ How to use?
 This section talks about the installation, usages, and configurations. Make sure you have Node.js(version 12.7.0 or higher) installed.
 ## Install
