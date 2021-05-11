@@ -9,7 +9,7 @@
     "bootstrap": "^4.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
-    "react-clip-path": "^0.0.3",
+    "react-clip-path": "0.0.4",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
     "react-scripts": "4.0.3",
