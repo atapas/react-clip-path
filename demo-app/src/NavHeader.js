@@ -53,7 +53,11 @@ const NavHeader = () => {
       {iconLinks.map((item, index) => (
         <IconLink key={index} info={item} />
       ))}
-      <CreateShape show={showCreateModal} handleClose={() => setShowCreateModal(false)}/>
+      <CreateShape show={showCreateModal} 
+        handleClose={() => {
+          setShowCreateModal(false); 
+          window.location.reload(); 
+        }}/>
     </Navbar>
   );
 };
