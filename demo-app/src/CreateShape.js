@@ -33,84 +33,18 @@ const CreateShape = (props) => {
         "name": value, 
         "type": value.toLowerCase(),
       });
-    } else if (name === "clipPathType") {
+    } else if (name === "vertices" || name === "edges") {
       setFormInputs({
         ...formInputs, 
-        "clipPathType": value, 
-        "formula": changeFormula(value, formInputs.vertices),
+        "vertices": value < 2 ? 2 : value, 
+        "edges": value < 2 ? 2 : value,
       });
-    } else if (name === "vertices" || "edges") {
-      setFormInputs({
-        ...formInputs, 
-        "vertices": value, 
-        "edges": value,
-        "formula": changeFormula("polygon", value),
-      });
-    } else if (name === "formula") {
-      setFormInputs({
-        ...formInputs, 
-        "formula": value,
-        "vertices": handleFormulaChangeFor("vertices", value), 
-        "edges": handleFormulaChangeFor("edges", value), 
-        "clipPathType": handleFormulaChangeFor("type", value), 
-      })
     } else {
       setFormInputs({
         ...formInputs, 
         [name]: value,
       });
     }
-  }
-
-  function changeFormula(type, verticeNumber) {
-    if (type === "polygon") {
-      let returnString = "polygon(";
-
-      for (let i = 0; i < verticeNumber; i++) {
-        if (i === verticeNumber - 1) {
-          returnString = returnString.concat("0% 0%)");
-        } else {
-          returnString = returnString.concat("0% 0%, ");
-        }
-      }
-
-      if (verticeNumber === null || verticeNumber < 1) {
-        return returnString.concat(")");
-      }
-
-      return returnString;
-    } if (type === "circle") {
-      return "circle(0%)";
-    } 
-    if (type === "ellipse") {
-      return "ellipse(0px 0px at 0% 0%)";
-    }  
-    if (type === "path") {
-      return "path()";
-    }  
-    if (type === "inset") {
-      return "inset(0px)";
-    } 
-  }
-
-  function handleFormulaChangeFor(type, formula) {
-    if (type === "vertices") {
-      return formula.split(",").length;
-    } else if (type === "edges") {
-      return formula.split(",").length;
-    } else if (type === "type") {
-      if (formula.includes("polygon")) {
-        return "polygon";
-      } else if (formula.includes("circle")) {
-        return "circle";
-      } else if (formula.includes("ellipse")) {
-        return "ellipse";
-      } else if (formula.includes("path")) {
-        return "path";
-      } else if (formula.includes("inset")) {
-        return "inset";
-      } 
-    } 
   }
 
   return (
