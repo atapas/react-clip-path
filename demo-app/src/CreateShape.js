@@ -14,13 +14,17 @@ const CreateShape = (props) => {
     //Schema Variables
     "name": "Square", 
     "type": "square",
-    "formula": "circle(50% at 50% 50%)",
+    "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%)",
     "vertices": "4",
     "edges": "4", 
     "notes": "", 
     //Other Variables
-    "clipPathType": "circle",
+    "clipPathType": "polygon",
     "showShadow": false,
+    //Circle Variables
+    "circleWidth": 50,
+    "circleLocationX": "",
+    "circleLocationY": "",
   });
 
   function handleChange(event) {

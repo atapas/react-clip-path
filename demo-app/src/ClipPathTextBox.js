@@ -11,6 +11,7 @@ function ClipPathTextBox(props) {
                     name="formula" 
                     value={props.formInputs.formula} 
                     onChange={props.handleChange} 
+                    readOnly
                 />
             </Form.Group>
         </Form>

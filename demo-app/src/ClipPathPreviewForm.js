@@ -1,12 +1,12 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
 
 function ClipPathPreviewForm(props) {
     return(
         <Form>
             <Form.Group>
-                <Form.Label>Shape Name: </Form.Label>
+                <Form.Label>Shape Name:</Form.Label>
                 <Form.Control 
                     type="text" 
                     name="name" 
@@ -16,7 +16,7 @@ function ClipPathPreviewForm(props) {
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>Description: </Form.Label>
+                <Form.Label>Description:</Form.Label>
                 <Form.Control 
                     as="textarea" 
                     name="notes" 
@@ -26,7 +26,7 @@ function ClipPathPreviewForm(props) {
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>Type of Clip Path: </Form.Label>
+                <Form.Label>Type of Clip Path:</Form.Label>
                 <Form.Control 
                     as="select" 
                     name="clipPathType" 
@@ -42,24 +42,69 @@ function ClipPathPreviewForm(props) {
             </Form.Group>
 
             {props.formInputs.clipPathType === "polygon" ? 
-                <Form.Group>
-                    <Form.Label>Number of vertices: </Form.Label>
-                    <Form.Control 
-                        type="number" 
-                        name="vertices" 
-                        value={props.formInputs.vertices} 
-                        onChange={props.handleChange} 
-                    />
-                    <Form.Label>Number of edges: </Form.Label>
-                    <Form.Control 
-                        type="number" 
-                        name="edges" 
-                        value={props.formInputs.edges} 
-                        onChange={props.handleChange} 
-                    />
-                </Form.Group> : 
+                <>
+                    <Form.Row>
+                        <Form.Group as={Col}>
+                            <Form.Label>Vertice number:</Form.Label>
+                            <Form.Control 
+                                type="number"
+                                name="vertices"
+                                value={props.formInputs.vertices}
+                                onChange={props.handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group as={Col}>
+                            <Form.Label>Edge number:</Form.Label>
+                            <Form.Control 
+                                type="number"
+                                name="edges"
+                                value={props.formInputs.edges}
+                                onChange={props.handleChange}
+                            />
+                        </Form.Group>
+                    </Form.Row>
+                </> : 
                 null
             }
+
+            {props.formInputs.clipPathType === "circle" ? 
+            <>
+                <Form.Row>
+                    <Form.Group as={Col}>
+                        <Form.Label>Width ({props.formInputs.circleWidth}%):</Form.Label>
+                        <Form.Control 
+                            type="range" 
+                            name="circleWidth" 
+                            value={props.formInputs.circleWidth} 
+                            onChange={props.handleChange} 
+                        />
+                    </Form.Group>
+                </Form.Row>
+
+                <Form.Row>
+                    <Form.Group as={Col}>
+                        <Form.Control 
+                            type="number" 
+                            name="circleLocationX" 
+                            placeholder="X Position"
+                            value={props.formInputs.circleLocationX} 
+                            onChange={props.handleChange} 
+                        />
+                    </Form.Group>
+
+                    <Form.Group as={Col}>
+                        <Form.Control 
+                            type="number" 
+                            name="circleLocationY" 
+                            placeholder="Y Position"
+                            value={props.formInputs.circleLocationY} 
+                            onChange={props.handleChange} 
+                        />
+                    </Form.Group>
+                </Form.Row>
+            </> : 
+            null
+        }
 
             <Form.Group>
                 <Form.Check 
@@ -69,10 +114,6 @@ function ClipPathPreviewForm(props) {
                     label="Show Outside of the Clipped Area" 
                     onChange={props.handleChange} 
                 />
-            </Form.Group>
-
-            <Form.Group>
-                <Button variant="primary">Update Clip-Path</Button>
             </Form.Group>
         </Form>
     );
