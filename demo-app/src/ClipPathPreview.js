@@ -9,8 +9,8 @@ function ClipPathPreview(props) {
                 // type="square"
                 formula={props.formInputs.formula}
                 text={props.formInputs.name}
-                width="500px"
-                height="500px"
+                width="400px"
+                height="400px"
                 showLabel={false}
                 showShadow={props.formInputs.showShadow}
             />

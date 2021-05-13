@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 function ClipPathPreviewForm(props) {
     return(
@@ -71,14 +72,7 @@ function ClipPathPreviewForm(props) {
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>Type out clip path: </Form.Label>
-                <Form.Control 
-                    type="text" 
-                    name="formula" 
-                    size="sm"
-                    value={props.formInputs.formula} 
-                    onChange={props.handleChange} 
-                />
+                <Button variant="primary">Update Clip-Path</Button>
             </Form.Group>
         </Form>
     );

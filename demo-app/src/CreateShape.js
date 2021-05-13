@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ClipPathPreviewForm from "./ClipPathPreviewForm.js";
 import ClipPathPreview from "./ClipPathPreview.js";
+import ClipPathTextBox from "./ClipPathTextBox";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Row from "react-bootstrap/Row";
@@ -13,12 +14,12 @@ const CreateShape = (props) => {
     //Schema Variables
     "name": "Square", 
     "type": "square",
-    "formula": "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)",
+    "formula": "circle(50% at 50% 50%)",
     "vertices": "4",
     "edges": "4", 
     "notes": "", 
     //Other Variables
-    "clipPathType": "polygon",
+    "clipPathType": "circle",
     "showShadow": false,
   });
 
@@ -59,6 +60,11 @@ const CreateShape = (props) => {
           </Col>
           <Col>
             <ClipPathPreview formInputs={formInputs} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <ClipPathTextBox formInputs={formInputs} handleChange={(event) => handleChange(event)} />
           </Col>
         </Row>
       </Modal.Body>
