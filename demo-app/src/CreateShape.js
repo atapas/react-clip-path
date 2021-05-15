@@ -61,7 +61,7 @@ const CreateShape = (props) => {
             <ClipPathPreviewForm formInputs={formInputs} handleChange={(event) => handleChange(event)} />
           </Col>
           <Col>
-            <ClipPathPreview formInputs={formInputs} />
+            <ClipPathPreview formInputs={formInputs} handleChange={(event) => handleChange(event)} />
           </Col>
         </Row>
       </Modal.Body>

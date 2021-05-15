@@ -41,16 +41,6 @@ function ClipPathPreviewForm(props) {
             </Form.Group>
 
             <Form.Group>
-                <Form.Check 
-                    type="switch" 
-                    name="showShadow" 
-                    id="showShadowSwitch"
-                    label="Show Outside of the Clipped Area" 
-                    onChange={props.handleChange} 
-                />
-            </Form.Group>
-
-            <Form.Group>
                 <Form.Label>Clip-Path: </Form.Label>
                 <Form.Control 
                     type="text" 
