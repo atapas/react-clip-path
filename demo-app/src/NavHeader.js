@@ -56,7 +56,6 @@ const NavHeader = () => {
       <CreateShape show={showCreateModal} 
         handleClose={() => {
           setShowCreateModal(false); 
-          window.location.reload(); 
         }}/>
     </Navbar>
   );

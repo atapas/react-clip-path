@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ClipPathPreviewForm from "./ClipPathPreviewForm.js";
 import ClipPathPreview from "./ClipPathPreview.js";
-import ClipPathTextBox from "./ClipPathTextBox";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Row from "react-bootstrap/Row";
@@ -20,11 +19,7 @@ const CreateShape = (props) => {
     "notes": "", 
     //Other Variables
     "clipPathType": "polygon",
-    "showShadow": false,
-    //Circle Variables
-    "circleWidth": 50,
-    "circleLocationX": "",
-    "circleLocationY": "",
+    "showShadow": false, 
   });
 
   function handleChange(event) {
@@ -38,11 +33,14 @@ const CreateShape = (props) => {
         "name": value, 
         "type": value.toLowerCase(),
       });
-    } else if (name === "vertices" || name === "edges") {
+    } else if (name === "formula") {
+      const edgeVerticeNumber = value.split(",").length;
+
       setFormInputs({
         ...formInputs, 
-        "vertices": value < 2 ? 2 : value, 
-        "edges": value < 2 ? 2 : value,
+        "formula": value, 
+        "vertices": edgeVerticeNumber, 
+        "edges": edgeVerticeNumber,
       });
     } else {
       setFormInputs({
@@ -64,11 +62,6 @@ const CreateShape = (props) => {
           </Col>
           <Col>
             <ClipPathPreview formInputs={formInputs} />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <ClipPathTextBox formInputs={formInputs} handleChange={(event) => handleChange(event)} />
           </Col>
         </Row>
       </Modal.Body>
