@@ -16,7 +16,7 @@ const CreateShape = (props) => {
     "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%)",
     "vertices": "4",
     "edges": "4", 
-    "notes": "", 
+    "notes": "A circle is a round shaped figure that has no corners or edges. In geometry, a circle can be defined as a closed, two-dimensional curved shape.", 
     //Other Variables
     "clipPathType": "polygon",
     "showShadow": false, 
@@ -37,7 +37,7 @@ const CreateShape = (props) => {
       });
     } else if (name === "formula") {
 
-      const edgeVerticeNumber = value.split(",").length;
+      const edgeVerticeNumber = formInputs.clipPathType === "polygon" ? value.split(",").length: 0;
 
       if (value.includes("(") && value.includes(")")) {
         setFormInputs({
@@ -52,29 +52,38 @@ const CreateShape = (props) => {
         setFormInputs({
           ...formInputs, 
           "clipPathType": value, 
+          "name": "Square", 
+          "type": "square", 
           "edges": 4,
           "vertices": 4,
-          "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%)",
+          "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%)", 
+          "notes": "A square is closed, two-dimensional shape with 4 equal sides. A square is a quadrilateral.", 
         });
       }
 
       if (value === "circle") {
         setFormInputs({
           ...formInputs, 
+          "name": "Circle", 
+          "type": "circle", 
           "clipPathType": value,  
           "edges": 0,
           "vertices": 0,
           "formula": "circle(50% at 50% 50%)",
+          "notes": "A circle is a round shaped figure that has no corners or edges. In geometry, a circle can be defined as a closed, two-dimensional curved shape.", 
         });
       }
 
       if (value === "ellipse") {
         setFormInputs({
           ...formInputs, 
+          "name": "Ellipse", 
+          "type": "ellipse", 
           "clipPathType": value,  
           "edges": 0,
           "vertices": 0,
           "formula": "ellipse(25% 40% at 50% 50%)",
+          "notes": "An ellipse is a shape that looks like an oval or a flattened circle.", 
         });
       }
     } else {

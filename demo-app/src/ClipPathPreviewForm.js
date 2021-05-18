@@ -20,6 +20,7 @@ function ClipPathPreviewForm(props) {
                 <Form.Control 
                     as="textarea" 
                     name="notes" 
+                    rows={3}
                     value={props.formInputs.notes} 
                     onChange={props.handleChange} 
                 />
