@@ -47,6 +47,44 @@ const CreateShape = (props) => {
           "edges": edgeVerticeNumber,
         });
       }
+    } else if (name === "clipPathType") {
+      if (value === "polygon") {
+        setFormInputs({
+          ...formInputs, 
+          "clipPathType": value, 
+          "edges": 4,
+          "vertices": 4,
+          "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%)",
+        });
+      }
+
+      if (value === "circle") {
+        setFormInputs({
+          ...formInputs, 
+          "clipPathType": value,  
+          "edges": 0,
+          "vertices": 0,
+          "formula": "circle(50% at 50% 50%)",
+        });
+      }
+
+      if (value === "ellipse") {
+        setFormInputs({
+          ...formInputs, 
+          "clipPathType": value,  
+          "edges": 0,
+          "vertices": 0,
+          "formula": "ellipse(25% 40% at 50% 50%)",
+        });
+      }
+
+      if (value === "inset") {
+        setFormInputs({
+          ...formInputs, 
+          "clipPathType": value, 
+          "formula": "inset(100px 50px);",
+        });
+      }
     } else {
       setFormInputs({
         ...formInputs, 
