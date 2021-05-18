@@ -77,14 +77,6 @@ const CreateShape = (props) => {
           "formula": "ellipse(25% 40% at 50% 50%)",
         });
       }
-
-      if (value === "inset") {
-        setFormInputs({
-          ...formInputs, 
-          "clipPathType": value, 
-          "formula": "inset(100px 50px);",
-        });
-      }
     } else {
       setFormInputs({
         ...formInputs, 

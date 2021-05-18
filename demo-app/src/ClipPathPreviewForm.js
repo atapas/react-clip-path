@@ -47,7 +47,6 @@ function ClipPathPreviewForm(props) {
                     <option value="polygon">Polygon</option>
                     <option value="circle">Circle</option>
                     <option value="ellipse">Ellipse</option>
-                    <option value="inset">Inset</option>
                 </Form.Control>
             </Form.Group>
 
