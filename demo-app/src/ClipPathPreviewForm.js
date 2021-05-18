@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
+import "./ClipPathPreviewForm.css";
 
 function ClipPathPreviewForm(props) {
     return(
@@ -20,6 +21,17 @@ function ClipPathPreviewForm(props) {
                     as="textarea" 
                     name="notes" 
                     value={props.formInputs.notes} 
+                    onChange={props.handleChange} 
+                />
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Shape Color: </Form.Label>
+                <input 
+                    type="color" 
+                    id="shapeColorInput" 
+                    name="backgroundColor" 
+                    value={props.formInputs.backgroundColor}
                     onChange={props.handleChange} 
                 />
             </Form.Group>

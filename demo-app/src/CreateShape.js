@@ -20,9 +20,11 @@ const CreateShape = (props) => {
     //Other Variables
     "clipPathType": "polygon",
     "showShadow": false, 
+    "backgroundColor": "#12a8d6",
   });
 
   function handleChange(event) {
+
     const name = event.target.name;
 
     const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;

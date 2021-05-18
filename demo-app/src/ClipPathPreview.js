@@ -27,6 +27,7 @@ function ClipPathPreview(props) {
           height="300px"
           showLabel={true}
           showShadow={props.formInputs.showShadow}
+          backgroundColor = {props.formInputs.backgroundColor}
         />
         <Form style={{padding: '7px', textAlign: 'center'}}>
           <Form.Check
