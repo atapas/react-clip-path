@@ -60,15 +60,6 @@ function ClipPathPreview(props) {
           </li>
         </ShapeDetails>
       </Playground>
-
-      {/* <p>Name: {props.formInputs.name}</p>
-      <p>Type: {props.formInputs.type}</p>
-      <p>Vertices: {props.formInputs.vertices}</p>
-      <p>Edges: {props.formInputs.edges}</p>
-      <p>Formula: {props.formInputs.formula}</p>
-      <p>Notes: {props.formInputs.notes}</p>
-      <p>Type of clip path: {props.formInputs.clipPathType}</p>
-      <p>ShowShadow: {props.formInputs.showShadow ? "True" : "False"}</p> */}
     </>
     
 ); 
