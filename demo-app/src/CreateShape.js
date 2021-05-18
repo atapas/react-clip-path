@@ -40,7 +40,31 @@ const CreateShape = (props) => {
       const edgeVerticeNumber = formInputs.clipPathType === "polygon" ? value.split(",").length: 0;
 
       if (value.includes("(") && value.includes(")")) {
-        setFormInputs({
+        if (value.includes("polygon")) {
+          setFormInputs({
+            ...formInputs, 
+            "formula": value, 
+            "clipPathType": "polygon",
+            "vertices": edgeVerticeNumber, 
+            "edges": edgeVerticeNumber, 
+          });
+        } else if (value.includes("circle")) {
+          setFormInputs({
+            ...formInputs, 
+            "formula": value, 
+            "clipPathType": "circle",
+            "vertices": edgeVerticeNumber, 
+            "edges": edgeVerticeNumber, 
+          });
+        } else if (value.includes("ellipse")) {
+          setFormInputs({
+            ...formInputs, 
+            "formula": value, 
+            "clipPathType": "ellipse",
+            "vertices": edgeVerticeNumber, 
+            "edges": edgeVerticeNumber, 
+          });
+        } else setFormInputs({
           ...formInputs, 
           "formula": value, 
           "vertices": edgeVerticeNumber, 
