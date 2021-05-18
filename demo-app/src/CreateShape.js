@@ -36,14 +36,17 @@ const CreateShape = (props) => {
         "type": value.toLowerCase(),
       });
     } else if (name === "formula") {
+
       const edgeVerticeNumber = value.split(",").length;
 
-      setFormInputs({
-        ...formInputs, 
-        "formula": value, 
-        "vertices": edgeVerticeNumber, 
-        "edges": edgeVerticeNumber,
-      });
+      if (value.includes("(") && value.includes(")")) {
+        setFormInputs({
+          ...formInputs, 
+          "formula": value, 
+          "vertices": edgeVerticeNumber, 
+          "edges": edgeVerticeNumber,
+        });
+      }
     } else {
       setFormInputs({
         ...formInputs, 
