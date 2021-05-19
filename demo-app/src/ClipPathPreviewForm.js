@@ -1,6 +1,13 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
-import "./ClipPathPreviewForm.css";
+import styled from "styled-components";
+
+const ColorPicker = styled.input`
+    border-color: lightgray;
+    border-radius: 3px;
+    margin-left: 5px;
+    padding: 2px 3px, 2px, 3px;
+`;
 
 function ClipPathPreviewForm(props) {
     return(
@@ -28,12 +35,11 @@ function ClipPathPreviewForm(props) {
 
             <Form.Group>
                 <Form.Label>Shape Color: </Form.Label>
-                <input 
+                <ColorPicker 
                     type="color" 
-                    id="shapeColorInput" 
-                    name="backgroundColor" 
+                    name="backgroundColor"
                     value={props.formInputs.backgroundColor}
-                    onChange={props.handleChange} 
+                    onChange={props.handleChange}
                 />
             </Form.Group>
 
