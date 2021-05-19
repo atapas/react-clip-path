@@ -76,12 +76,12 @@ const CreateShape = (props) => {
         setFormInputs({
           ...formInputs, 
           "clipPathType": value, 
-          "name": "Square", 
-          "type": "square", 
+          "name": "Tilted Square", 
+          "type": "tiltedSquare", 
           "edges": 4,
           "vertices": 4,
-          "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%)", 
-          "notes": "A square is closed, two-dimensional shape with 4 equal sides. A square is a quadrilateral.", 
+          "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 80%)", 
+          "notes": "", 
         });
       }
 
@@ -94,7 +94,7 @@ const CreateShape = (props) => {
           "edges": 0,
           "vertices": 0,
           "formula": "circle(50% at 50% 50%)",
-          "notes": "A circle is a round shaped figure that has no corners or edges. In geometry, a circle can be defined as a closed, two-dimensional curved shape.", 
+          "notes": "", 
         });
       }
 
@@ -107,7 +107,7 @@ const CreateShape = (props) => {
           "edges": 0,
           "vertices": 0,
           "formula": "ellipse(25% 40% at 50% 50%)",
-          "notes": "An ellipse is a shape that looks like an oval or a flattened circle.", 
+          "notes": "", 
         });
       }
     } else {
