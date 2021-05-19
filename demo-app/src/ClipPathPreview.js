@@ -1,19 +1,8 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
-import styled from "styled-components";
 
-import Shape from "react-clip-path"
-
-const Playground = styled.div`
-  width: 100%;
-`;
-
-const ShapeDetails = styled.ul`
-  background-color: #ebebeb;
-  border-radius: 4px;
-  padding: 10px;
-  width: 100%;
-`;
+import Shape from "react-clip-path"; 
+import { Playground, ShapeDetails } from "./StyledComponents.js";
 
 function ClipPathPreview(props) {
   return(
