@@ -11,12 +11,12 @@ const CreateShape = (props) => {
   // Change these keys to the ones in schema.js
   const [formInputs, setFormInputs] = useState({
     //Schema Variables
-    "name": "Square", 
-    "type": "square",
-    "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%)",
+    "name": "Tilted Square", 
+    "type": "tiltedSquare",
+    "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 80%)",
     "vertices": "4",
     "edges": "4", 
-    "notes": "A circle is a round shaped figure that has no corners or edges. In geometry, a circle can be defined as a closed, two-dimensional curved shape.", 
+    "notes": "", 
     //Other Variables
     "clipPathType": "polygon",
     "showShadow": false, 
