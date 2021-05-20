@@ -36,35 +36,28 @@ const CreateShape = (props) => {
         "type": value.toLowerCase(),
       });
     } else if (name === "formula") {
-
-      if (!(value.includes("(") && value.includes(")"))) {
-        return;
-      }
-
       const edgeVerticeNumber = formInputs.clipPathType === "polygon" ? value.split(",").length: 0;
 
       if (value.includes("polygon")) {
-        setFormulaEdgeVerticeNumberClipPathType(value, edgeVerticeNumber, "polygon");
+        handleFormulaChange(value, edgeVerticeNumber, "polygon");
       } else if (value.includes("circle")) {
-        setFormulaEdgeVerticeNumberClipPathType(value, edgeVerticeNumber, "circle");
+        handleFormulaChange(value, edgeVerticeNumber, "circle");
       } else if (value.includes("ellipse")) {
-        setFormulaEdgeVerticeNumberClipPathType(value, edgeVerticeNumber, "ellipse");
+        handleFormulaChange(value, edgeVerticeNumber, "ellipse");
       } else {
-        setFormulaEdgeVerticeNumberClipPathType(value, edgeVerticeNumber);
+        handleFormulaChange(value, edgeVerticeNumber);
       }
-      
+
     } else if (name === "clipPathType") {
       if (value === "polygon") {
         setFormInputs({
           ...formInputs, 
-          "clipPathType": value, 
           "name": "Tilted Square", 
           "type": "tiltedSquare", 
-          "edges": 4,
-          "vertices": 4,
           "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 80%)", 
-          "notes": "", 
         });
+
+        handleClipPathChange("polygon", 4);
       }
 
       if (value === "circle") {
@@ -72,12 +65,10 @@ const CreateShape = (props) => {
           ...formInputs, 
           "name": "Circle", 
           "type": "circle", 
-          "clipPathType": value,  
-          "edges": 0,
-          "vertices": 0,
           "formula": "circle(50% at 50% 50%)",
-          "notes": "", 
         });
+
+        handleClipPathChange("circle", 0);
       }
 
       if (value === "ellipse") {
@@ -85,12 +76,10 @@ const CreateShape = (props) => {
           ...formInputs, 
           "name": "Ellipse", 
           "type": "ellipse", 
-          "clipPathType": value,  
-          "edges": 0,
-          "vertices": 0,
           "formula": "ellipse(25% 40% at 50% 50%)",
-          "notes": "", 
         });
+
+        handleClipPathChange("ellipse", 0);
       }
     } else {
       setFormInputs({
@@ -100,16 +89,28 @@ const CreateShape = (props) => {
     }
   }
 
-  function setFormulaEdgeVerticeNumberClipPathType(formula, edgeVerticeNumber, clipPathType) {
+  function handleFormulaChange(formula, edgeVerticeNumber, clipPathType) {
     setFormInputs(prevState => {
       return {
         ...prevState, 
-        "formula": formula, 
+        "formula": formula.includes("(") && formula.includes(")") ? formula : prevState.formula, 
         "clipPathType": clipPathType === null ? prevState.clipPathType : clipPathType,
         "vertices": edgeVerticeNumber, 
         "edges": edgeVerticeNumber, 
       }
     });
+  }
+
+  function handleClipPathChange(clipPathType, edgeVerticeNumber) {
+    setFormInputs(prevState => {
+      return {
+        ...prevState, 
+        "clipPathType": clipPathType, 
+        "edges": edgeVerticeNumber,
+        "vertices": edgeVerticeNumber, 
+        "notes": "", 
+      }
+    })
   }
 
   const [validated, setValidated] = useState(false);
