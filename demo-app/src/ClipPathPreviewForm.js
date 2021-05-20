@@ -34,7 +34,7 @@ function ClipPathPreviewForm(props) {
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>Shape Color: </Form.Label>
+                <Form.Label>Shape Color:</Form.Label>
                 <ColorPicker 
                     type="color" 
                     name="backgroundColor"
