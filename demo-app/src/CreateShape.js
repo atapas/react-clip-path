@@ -26,9 +26,7 @@ const CreateShape = (props) => {
   });
 
   function handleChange(event) {
-
     const name = event.target.name;
-
     const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
 
     if (name === "name") {
@@ -39,40 +37,22 @@ const CreateShape = (props) => {
       });
     } else if (name === "formula") {
 
+      if (!(value.includes("(") && value.includes(")"))) {
+        return;
+      }
+
       const edgeVerticeNumber = formInputs.clipPathType === "polygon" ? value.split(",").length: 0;
 
-      if (value.includes("(") && value.includes(")")) {
-        if (value.includes("polygon")) {
-          setFormInputs({
-            ...formInputs, 
-            "formula": value, 
-            "clipPathType": "polygon",
-            "vertices": edgeVerticeNumber, 
-            "edges": edgeVerticeNumber, 
-          });
-        } else if (value.includes("circle")) {
-          setFormInputs({
-            ...formInputs, 
-            "formula": value, 
-            "clipPathType": "circle",
-            "vertices": edgeVerticeNumber, 
-            "edges": edgeVerticeNumber, 
-          });
-        } else if (value.includes("ellipse")) {
-          setFormInputs({
-            ...formInputs, 
-            "formula": value, 
-            "clipPathType": "ellipse",
-            "vertices": edgeVerticeNumber, 
-            "edges": edgeVerticeNumber, 
-          });
-        } else setFormInputs({
-          ...formInputs, 
-          "formula": value, 
-          "vertices": edgeVerticeNumber, 
-          "edges": edgeVerticeNumber,
-        });
+      if (value.includes("polygon")) {
+        setFormulaEdgeVerticeNumberClipPathType(value, edgeVerticeNumber, "polygon");
+      } else if (value.includes("circle")) {
+        setFormulaEdgeVerticeNumberClipPathType(value, edgeVerticeNumber, "circle");
+      } else if (value.includes("ellipse")) {
+        setFormulaEdgeVerticeNumberClipPathType(value, edgeVerticeNumber, "ellipse");
+      } else {
+        setFormulaEdgeVerticeNumberClipPathType(value, edgeVerticeNumber);
       }
+      
     } else if (name === "clipPathType") {
       if (value === "polygon") {
         setFormInputs({
@@ -118,6 +98,18 @@ const CreateShape = (props) => {
         [name]: value,
       });
     }
+  }
+
+  function setFormulaEdgeVerticeNumberClipPathType(formula, edgeVerticeNumber, clipPathType) {
+    setFormInputs(prevState => {
+      return {
+        ...prevState, 
+        "formula": formula, 
+        "clipPathType": clipPathType === null ? prevState.clipPathType : clipPathType,
+        "vertices": edgeVerticeNumber, 
+        "edges": edgeVerticeNumber, 
+      }
+    });
   }
 
   const [validated, setValidated] = useState(false);
