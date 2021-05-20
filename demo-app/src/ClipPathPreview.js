@@ -1,8 +1,9 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
+import ShapeDetailsBox from "./ShapeDetailsBox.js";
 
 import Shape from "react-clip-path"; 
-import { Playground, ShapeDetails } from "./StyledComponents.js";
+import { Playground } from "./StyledComponents.js";
 
 function ClipPathPreview(props) {
   return(
@@ -28,26 +29,12 @@ function ClipPathPreview(props) {
             onChange={props.handleChange}
           />
         </Form>
-        <ShapeDetails>
-          <li>
-            <strong>Did you know?</strong> <p>{props.formInputs.notes}</p>
-          </li>
-          <li>
-            <span>
-              <b>Edges:</b> {props.formInputs.edges}
-            </span>
-          </li>
-          <li>
-            <span>
-              <b>Vertices:</b> {props.formInputs.vertices}
-            </span>
-          </li>
-          <li>
-            <span>
-              <b>clip-path:</b> <code><b>{props.formInputs.formula}</b></code>
-            </span>
-          </li>
-        </ShapeDetails>
+        <ShapeDetailsBox 
+          notes={props.formInputs.notes}
+          edges={props.formInputs.edges}
+          vertices={props.formInputs.vertices}
+          formula={props.formInputs.formula}
+        />
       </Playground>
     </>
     

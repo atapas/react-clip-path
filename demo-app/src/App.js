@@ -3,13 +3,14 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import ShapeDetailsBox from "./ShapeDetailsBox.js";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import Shape  from 'react-clip-path';
 import { getAvailableShapeTypes, getShape } from 'react-clip-path/schema';
-import { ShapeCards, ShapeCard, ShapeName, Playground, ShapeDetails, ShapePallete } from "./StyledComponents.js";
+import { ShapeCards, ShapeCard, ShapeName, Playground, ShapePallete } from "./StyledComponents.js";
 
 function App() {
 
@@ -60,26 +61,12 @@ function App() {
                 onChange={handleSwicth}
               />
             </Form>
-            <ShapeDetails>
-              <li>
-                <strong>Did you know?</strong> <p>{selectedShape.notes}</p>
-              </li>
-              <li>
-                <span>
-                  <b>Edges:</b> {selectedShape.edges}
-                </span>
-              </li>
-              <li>
-                <span>
-                  <b>Vertices:</b> {selectedShape.vertices}
-                </span>
-              </li>
-              <li>
-                <span>
-                  <b>clip-path:</b> <code><b>{selectedShape.formula}</b></code>
-                </span>
-              </li>
-            </ShapeDetails>
+            <ShapeDetailsBox 
+              notes={selectedShape.notes}
+              edges={selectedShape.edges}
+              vertices={selectedShape.vertices}
+              formula={selectedShape.formula}
+            />
           </Playground>
         </Col>
         <Col sm={8}>
