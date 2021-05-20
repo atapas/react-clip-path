@@ -49,38 +49,7 @@ const CreateShape = (props) => {
       }
 
     } else if (name === "clipPathType") {
-      if (value === "polygon") {
-        setFormInputs({
-          ...formInputs, 
-          "name": "Tilted Square", 
-          "type": "tiltedSquare", 
-          "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 80%)", 
-        });
-
-        handleClipPathChange("polygon", 4);
-      }
-
-      if (value === "circle") {
-        setFormInputs({
-          ...formInputs, 
-          "name": "Circle", 
-          "type": "circle", 
-          "formula": "circle(50% at 50% 50%)",
-        });
-
-        handleClipPathChange("circle", 0);
-      }
-
-      if (value === "ellipse") {
-        setFormInputs({
-          ...formInputs, 
-          "name": "Ellipse", 
-          "type": "ellipse", 
-          "formula": "ellipse(25% 40% at 50% 50%)",
-        });
-
-        handleClipPathChange("ellipse", 0);
-      }
+      handleClipPathChange(value);
     } else {
       setFormInputs({
         ...formInputs, 
@@ -101,13 +70,40 @@ const CreateShape = (props) => {
     });
   }
 
-  function handleClipPathChange(clipPathType, edgeVerticeNumber) {
+  function handleClipPathChange(clipPathType) {
+    if (clipPathType === "polygon") {
+      setFormInputs({
+        ...formInputs, 
+        "name": "Tilted Square", 
+        "type": "tiltedSquare", 
+        "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 80%)", 
+      });
+    }
+
+    if (clipPathType === "circle") {
+      setFormInputs({
+        ...formInputs, 
+        "name": "Circle", 
+        "type": "circle", 
+        "formula": "circle(50% at 50% 50%)",
+      });
+    }
+
+    if (clipPathType === "ellipse") {
+      setFormInputs({
+        ...formInputs, 
+        "name": "Ellipse", 
+        "type": "ellipse", 
+        "formula": "ellipse(25% 40% at 50% 50%)",
+      });
+    }
+
     setFormInputs(prevState => {
       return {
         ...prevState, 
         "clipPathType": clipPathType, 
-        "edges": edgeVerticeNumber,
-        "vertices": edgeVerticeNumber, 
+        "edges": clipPathType === "polygon" ? 4 : 0,
+        "vertices": clipPathType === "polygon" ? 4 : 0, 
         "notes": "", 
       }
     })
