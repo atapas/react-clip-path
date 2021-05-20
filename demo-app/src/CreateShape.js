@@ -118,6 +118,17 @@ const CreateShape = (props) => {
     }
   }
 
+  const [validated, setValidated] = useState(false);
+
+    const handleSubmit = (event) => {
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        setValidated(true);
+    }
+
   return (
     <Modal show={props.show} centered size="xl" onHide={props.handleClose}>
       <Modal.Header closeButton>
@@ -126,10 +137,18 @@ const CreateShape = (props) => {
       <Modal.Body>
         <Row>
           <Col>
-            <ClipPathPreviewForm formInputs={formInputs} handleChange={(event) => handleChange(event)} />
+            <ClipPathPreviewForm 
+              formInputs={formInputs} 
+              handleChange={handleChange} 
+              handleSubmit={handleSubmit} 
+              validated={validated}
+            />
           </Col>
           <Col>
-            <ClipPathPreview formInputs={formInputs} handleChange={(event) => handleChange(event)} />
+            <ClipPathPreview 
+              formInputs={formInputs} 
+              handleChange={handleChange} 
+            />
           </Col>
         </Row>
       </Modal.Body>
@@ -137,7 +156,7 @@ const CreateShape = (props) => {
         <Button variant="secondary" onClick={props.handleClose}>
           Close
         </Button>
-        <Button variant="primary" onClick={props.handleClose}>
+        <Button variant="primary" form="previewForm" type="submit">
           Save Changes
         </Button>
       </Modal.Footer>

@@ -11,7 +11,7 @@ const ColorPicker = styled.input`
 
 function ClipPathPreviewForm(props) {
     return(
-        <Form>
+        <Form noValidate validated={props.validated} onSubmit={props.handleSubmit} id="previewForm">
             <Form.Group>
                 <Form.Label>Shape Name:</Form.Label>
                 <Form.Control 
@@ -19,7 +19,9 @@ function ClipPathPreviewForm(props) {
                     name="name" 
                     value={props.formInputs.name} 
                     onChange={props.handleChange} 
+                    required
                 />
+                <Form.Control.Feedback type="invalid">Name required!</Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group>
@@ -58,13 +60,15 @@ function ClipPathPreviewForm(props) {
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>Clip-Path: </Form.Label>
+                <Form.Label>Clip-Path:</Form.Label>
                 <Form.Control 
                     type="text" 
                     name="formula" 
                     value={props.formInputs.formula} 
                     onChange={props.handleChange} 
+                    required
                 />
+                <Form.Control.Feedback type="invalid">Formula required!</Form.Control.Feedback>
             </Form.Group>
         </Form>
     );
