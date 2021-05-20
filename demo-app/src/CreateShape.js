@@ -7,9 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const CreateShape = (props) => {
-  
-  // Change these keys to the ones in schema.js
-  const [formInputs, setFormInputs] = useState({
+  const initialState = {
     //Schema Variables
     "name": "Tilted Square", 
     "type": "tiltedSquare",
@@ -21,6 +19,10 @@ const CreateShape = (props) => {
     "clipPathType": "polygon",
     "showShadow": false, 
     "backgroundColor": "#12a8d6",
+  }
+
+  const [formInputs, setFormInputs] = useState({
+    ...initialState
   });
 
   function handleChange(event) {
@@ -153,7 +155,7 @@ const CreateShape = (props) => {
         </Row>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={props.handleClose}>
+        <Button variant="secondary" onClick={() => { setFormInputs({ ...initialState }); props.handleClose(); }}>
           Close
         </Button>
         <Button variant="primary" form="previewForm" type="submit">
