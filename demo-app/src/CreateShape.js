@@ -151,9 +151,6 @@ const CreateShape = (props) => {
         <Button variant="secondary" onClick={() => { setFormInputs({ ...initialState }); props.handleClose(); }}>
           Close
         </Button>
-        <Button variant="primary" form="previewForm" type="submit">
-          Save Changes
-        </Button>
       </Modal.Footer>
     </Modal>
   );
