@@ -37,7 +37,9 @@ const CreateShape = (props) => {
     } else if (name === "formula") {
       const edgeVerticeNumber = formInputs.clipPathType === "polygon" ? value.split(",").length: 0;
 
-      if (value.includes("polygon")) {
+      if (value === "") {
+        handleFormulaChange(formInputs.clipPathType + "()", edgeVerticeNumber)
+      } else if (value.includes("polygon")) {
         handleFormulaChange(value, edgeVerticeNumber, "polygon");
       } else if (value.includes("circle")) {
         handleFormulaChange(value, edgeVerticeNumber, "circle");
@@ -132,7 +134,7 @@ const CreateShape = (props) => {
       </Modal.Header>
       <Modal.Body>
         <Container fluid>
-          <Row sm={1} xs={1} lg={2} md={1}>
+          <Row lg={2} md={1} sm={1} xs={1}>
             <Col>
               <ClipPathPreview 
                 formInputs={formInputs} 
