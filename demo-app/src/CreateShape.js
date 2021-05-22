@@ -119,7 +119,13 @@ const CreateShape = (props) => {
     }
 
   return (
-    <Modal show={props.show} centered size="xl" onHide={props.handleClose}>
+    <Modal 
+      show={props.show} 
+      centered 
+      size="xl" 
+      onHide={props.handleClose} 
+      backdrop="static"
+    >
       <Modal.Header closeButton>
         <Modal.Title>Clip Path Preview</Modal.Title>
       </Modal.Header>
