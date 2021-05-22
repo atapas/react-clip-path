@@ -5,7 +5,7 @@ const ShapeDetailsBox = (props) => {
     return(
         <ShapeDetails>
             <li>
-                <strong>Did you know?</strong> <p>{props.notes}</p>
+                {props.notes === "" ? null : <><strong>Did you know?</strong> <p>{props.notes}</p></>}
             </li>
             <li>
                 <span>
