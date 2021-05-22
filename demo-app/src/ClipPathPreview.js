@@ -30,10 +30,12 @@ const ClipPathPreview = (props) => {
           />
         </Form>
         <ShapeDetailsBox 
-          notes={props.formInputs.notes}
-          edges={props.formInputs.edges}
-          vertices={props.formInputs.vertices}
-          formula={props.formInputs.formula}
+          shapeInformation={{
+            "notes": props.formInputs.notes, 
+            "edges": props.formInputs.edges, 
+            "vertices": props.formInputs.vertices, 
+            "formula": props.formInputs.formula,
+          }}
         />
       </Playground>
     </>

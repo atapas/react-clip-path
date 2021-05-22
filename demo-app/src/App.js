@@ -62,6 +62,12 @@ function App() {
               />
             </Form>
             <ShapeDetailsBox 
+              shapeInformation={{
+                "notes": selectedShape.notes, 
+                "edges": selectedShape.edges, 
+                "vertices": selectedShape.vertices, 
+                "formula": selectedShape.formula,
+              }}
               notes={selectedShape.notes}
               edges={selectedShape.edges}
               vertices={selectedShape.vertices}
