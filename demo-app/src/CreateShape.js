@@ -128,17 +128,17 @@ const CreateShape = (props) => {
       <Modal.Body>
         <Row>
           <Col>
+            <ClipPathPreview 
+              formInputs={formInputs} 
+              handleChange={handleChange} 
+            />
+          </Col>
+          <Col>
             <ClipPathPreviewForm 
               formInputs={formInputs} 
               handleChange={handleChange} 
               handleSubmit={handleSubmit} 
               validated={validated}
-            />
-          </Col>
-          <Col>
-            <ClipPathPreview 
-              formInputs={formInputs} 
-              handleChange={handleChange} 
             />
           </Col>
         </Row>
