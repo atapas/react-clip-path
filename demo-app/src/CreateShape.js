@@ -15,7 +15,7 @@ const CreateShape = (props) => {
     "edges": "4", 
     "notes": "", 
     "clipPathType": "polygon",
-    "showShadow": false, 
+    "showShadow": true, 
     "backgroundColor": "#12a8d6",
   }
 
