@@ -49,8 +49,12 @@ const ShapeDetails = styled.ul`
   width: 100%;
 `;
 
+const ShapeDetailsItems = styled.li`
+  word-wrap: break-word;
+`;
+
 const ShapePallete = styled.div`
   margin-top: 5px;
 `;
 
-export { ShapeCards, ShapeCard, ShapeName, Playground, ShapeDetails, ShapePallete };
+export { ShapeCards, ShapeCard, ShapeName, Playground, ShapeDetails, ShapeDetailsItems, ShapePallete };

@@ -3,6 +3,7 @@ import ClipPathPreviewForm from "./ClipPathPreviewForm.js";
 import ClipPathPreview from "./ClipPathPreview.js";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -130,22 +131,24 @@ const CreateShape = (props) => {
         <Modal.Title>Clip Path Preview</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Row>
-          <Col>
-            <ClipPathPreview 
-              formInputs={formInputs} 
-              handleChange={handleChange} 
-            />
-          </Col>
-          <Col>
-            <ClipPathPreviewForm 
-              formInputs={formInputs} 
-              handleChange={handleChange} 
-              handleSubmit={handleSubmit} 
-              validated={validated}
-            />
-          </Col>
-        </Row>
+        <Container fluid>
+          <Row sm={1} xs={1} lg={2} md={1}>
+            <Col>
+              <ClipPathPreview 
+                formInputs={formInputs} 
+                handleChange={handleChange} 
+              />
+            </Col>
+            <Col>
+              <ClipPathPreviewForm 
+                formInputs={formInputs} 
+                handleChange={handleChange} 
+                handleSubmit={handleSubmit} 
+                validated={validated}
+              />
+            </Col>
+          </Row>
+        </Container>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={() => { setFormInputs({ ...initialState }); props.handleClose(); }}>

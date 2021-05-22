@@ -68,10 +68,6 @@ function App() {
                 "vertices": selectedShape.vertices, 
                 "formula": selectedShape.formula,
               }}
-              notes={selectedShape.notes}
-              edges={selectedShape.edges}
-              vertices={selectedShape.vertices}
-              formula={selectedShape.formula}
             />
           </Playground>
         </Col>
