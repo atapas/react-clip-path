@@ -8,14 +8,12 @@ import Col from "react-bootstrap/Col";
 
 const CreateShape = (props) => {
   const initialState = {
-    //Schema Variables
     "name": "Tilted Square", 
     "type": "tiltedSquare",
     "formula": "polygon(10% 10%, 90% 10%, 90% 90%, 10% 80%)",
     "vertices": "4",
     "edges": "4", 
     "notes": "", 
-    //Other Variables
     "clipPathType": "polygon",
     "showShadow": false, 
     "backgroundColor": "#12a8d6",

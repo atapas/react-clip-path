@@ -10,7 +10,6 @@ const ClipPathPreview = (props) => {
     <>
       <Playground>
         <Shape
-          // type="square"
           formula={props.formInputs.formula}
           text={props.formInputs.name}
           width="300px"
