@@ -9,7 +9,7 @@ const ColorPicker = styled.input`
     padding: 2px 3px, 2px, 3px;
 `;
 
-function ClipPathPreviewForm(props) {
+const ClipPathPreviewForm = (props) => {
     return(
         <Form noValidate validated={props.validated} onSubmit={props.handleSubmit} id="previewForm">
             <Form.Group>

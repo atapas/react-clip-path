@@ -1,7 +1,7 @@
 import React from "react";
 import { ShapeDetails } from "./StyledComponents.js";
 
-function ShapeDetailsBox(props) {
+const ShapeDetailsBox = (props) => {
     return(
         <ShapeDetails>
             <li>

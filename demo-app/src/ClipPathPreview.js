@@ -5,7 +5,7 @@ import ShapeDetailsBox from "./ShapeDetailsBox.js";
 import Shape from "react-clip-path"; 
 import { Playground } from "./StyledComponents.js";
 
-function ClipPathPreview(props) {
+const ClipPathPreview = (props) => {
   return(
     <>
       <Playground>
