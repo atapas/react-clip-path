@@ -1,5 +1,18 @@
-
-li {
-  list-style: none
+.App {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .App {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .App {
+  grid-template-columns: repeat(1, 1fr);
+  }
+}
