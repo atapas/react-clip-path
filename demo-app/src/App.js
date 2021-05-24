@@ -1,68 +1,16 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import ShapeDetailsBox from "./ShapeDetailsBox.js";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import Shape  from 'react-clip-path';
 import { getAvailableShapeTypes, getShape } from 'react-clip-path/schema';
-
-const ShapeCards = styled.div`
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(4, 1fr);
-    margin-top: 1rem;
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: 280px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
-}
-`;
-
-const ShapeCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #ececec;
-  border-radius: 4px;
-  padding: 5px;
-  margin: 5px;
-  background-color: ${props => props.selected ? '#dce585' : '#ebebeb'};
-  cursor: pointer;
-
-  &:hover {
-    background-color: #e0e4b5;
-  }
-`;
-
-const ShapeName = styled.span`
-    font-weight: bold;
-`;
-
-const Playground = styled.div`
-  width: 100%;
-`;
-
-const ShapeDetails = styled.ul`
-  background-color: #ebebeb;
-  border-radius: 4px;
-  padding: 10px;
-  width: 100%;
-`;
-
-const ShapePallete = styled.div`
-  margin-top: 5px;
-`;
+import { ShapeCards, ShapeCard, ShapeName, Playground, ShapePallete } from "./StyledComponents.js";
 
 function App() {
 
@@ -113,26 +61,7 @@ function App() {
                 onChange={handleSwicth}
               />
             </Form>
-            <ShapeDetails>
-              <li>
-                <strong>Did you know?</strong> <p>{selectedShape.notes}</p>
-              </li>
-              <li>
-                <span>
-                  <b>Edges:</b> {selectedShape.edges}
-                </span>
-              </li>
-              <li>
-                <span>
-                  <b>Vertices:</b> {selectedShape.vertices}
-                </span>
-              </li>
-              <li>
-                <span>
-                  <b>clip-path:</b> <code><b>{selectedShape.formula}</b></code>
-                </span>
-              </li>
-            </ShapeDetails>
+            <ShapeDetailsBox shapeInformation={ selectedShape } />
           </Playground>
         </Col>
         <Col sm={8}>
