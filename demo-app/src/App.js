@@ -61,14 +61,7 @@ function App() {
                 onChange={handleSwicth}
               />
             </Form>
-            <ShapeDetailsBox 
-              shapeInformation={{
-                "notes": selectedShape.notes, 
-                "edges": selectedShape.edges, 
-                "vertices": selectedShape.vertices, 
-                "formula": selectedShape.formula,
-              }}
-            />
+            <ShapeDetailsBox shapeInformation={ selectedShape } />
           </Playground>
         </Col>
         <Col sm={8}>

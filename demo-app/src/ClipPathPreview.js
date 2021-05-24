@@ -28,14 +28,7 @@ const ClipPathPreview = (props) => {
             onChange={props.handleChange}
           />
         </Form>
-        <ShapeDetailsBox 
-          shapeInformation={{
-            "notes": props.formInputs.notes, 
-            "edges": props.formInputs.edges, 
-            "vertices": props.formInputs.vertices, 
-            "formula": props.formInputs.formula,
-          }}
-        />
+        <ShapeDetailsBox shapeInformation={ props.formInputs } />
       </Playground>
     </>
     
