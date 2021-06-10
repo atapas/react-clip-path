@@ -48,7 +48,7 @@ After import, we can now use it in any React component.
 
 ```js
 <Shape
-    type="circle"
+    name="Circle"
     width="300px"
     height="300px"
     showLabel={true}
@@ -78,18 +78,18 @@ This section provides details about the properties(props).
   </tr>
 
   <tr>
-    <td> type </td>
-    <td> The shape type</td>
+    <td> name </td>
+    <td> The shape Name </td>
     <td> Yes </td>
     <td>
-  Supported Shape types(out-of-the-box) are, <code>circle</code>, <code>square</code>, <code>rectangle</code>, <code>rhombus</code>, <code>ellipse</code>, <code>triangle</code>, <code>parallelogram</code>, <code>trapezoid</code>, <code>pentagon</code>, <code>hexagon</code>, <code>heptagon</code>, <code>octagon</code>, <code>nonagon</code>, <code>decagon</code>, <code>cross</code>, <code>star</code>.
+  Supported Shapes(out-of-the-box) are, <code>circle</code>, <code>square</code>, <code>rectangle</code>, <code>rhombus</code>, <code>ellipse</code>, <code>triangle</code>, <code>parallelogram</code>, <code>trapezoid</code>, <code>pentagon</code>, <code>hexagon</code>, <code>heptagon</code>, <code>octagon</code>, <code>nonagon</code>, <code>decagon</code>, <code>cross</code>, <code>star</code>.
     </td>
   </tr>
 
   <tr>
     <td> formula </td>
     <td> The shape's clip-path formula. Please pass a CSS clip-path value using inset, circle, ellipse, polygon</td>
-    <td> Yes - It is required if type is not passed.  </td>
+    <td> Yes - It is required if name is not passed.  </td>
     <td>
       <ul>
         <li>circle(50% at 50% 50%)</li>
@@ -139,7 +139,7 @@ This section provides details about the properties(props).
     <td> Any text label about the shape </td>
     <td> No </td>
     <td>
-      The type name of the shape.
+      The label of the shape.
     </td>
   </tr>
 
