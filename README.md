@@ -69,6 +69,15 @@ This section provides details about the properties(props).
   </tr>
 
   <tr>
+    <td> id </td>
+    <td> The unique identifier of the shape </td>
+    <td> No </td>
+    <td>
+      Please pass a unique string as id. If no value is passed, the shape name is used as the id value.
+    </td>
+  </tr>
+
+  <tr>
     <td> type </td>
     <td> The shape type</td>
     <td> Yes </td>
@@ -162,20 +171,22 @@ The `react-clip-path` depends on a `schema` file to get the shape information. Y
 Here is an example of the `circle` shape in the schema file,
 
 ```js
-'circle': {
-      'name': 'Circle',
-      'type': 'circle',
-      'formula': 'circle(50% at 50% 50%)',
-      'vertices': 0,
-      'edges': 0,
-      'notes': 'A circle is a round shaped figure that has no corners or edges. In geometry, a circle can be defined as a closed, two-dimensional curved shape.'
-    }
+{
+  'name': 'Circle',
+  'type': 'circle',
+  'formula': 'circle(50% at 50% 50%)',
+  'vertices': 0,
+  'edges': 0,
+  'notes': 'A circle is a round shaped figure that has no corners or edges. In geometry, a circle can be defined as a closed, two-dimensional curved shape.'
+}
 ```
 
 The same schema file also contains a few utility methods. You can import them as,
 
 ```js
-import { getAvailableShapeTypes, getShape } from 'react-clip-path/schema';
+import { getShape } from 'react-clip-path/schema';
+
+getShape('Circle'); // returns the details of the Circle shape.
 ```
 
 # 🏷️ License

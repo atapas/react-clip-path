@@ -44,15 +44,17 @@ const Shape = props => {
     const height = props.height;
     const width = props.width;
     const showShadow = props.showShadow;
-    const shapeInfo = getShape(props.type);
+    const shapeInfo = getShape(props.name);
     const formula = shapeInfo ? shapeInfo.formula : props.formula;
     const text = shapeInfo ? shapeInfo.name : props.text;
     const showLabel = props.showLabel;
+    const id = props.id || props.name;
 
     return (
         <Box height={ height } width={ width }>
             { showShadow && <Shadow backgroundColor = { backgroundColor } /> }
             <Component 
+                id = { id }
                 backgroundColor = { backgroundColor } 
                 formula = { formula }> 
                 { showLabel && (<Label> { text }</Label>) }
