@@ -49,9 +49,10 @@ const Shape = props => {
     const text = shapeInfo ? shapeInfo.name : props.text;
     const showLabel = props.showLabel;
     const id = props.id || props.name;
+    const handleClick = props.handleClick;
 
     return (
-        <Box height={ height } width={ width }>
+        <Box height={ height } width={ width } onClick={ handleClick }>
             { showShadow && <Shadow backgroundColor = { backgroundColor } /> }
             <Component 
                 id = { id }
