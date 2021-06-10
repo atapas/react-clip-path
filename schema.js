@@ -146,10 +146,12 @@ const shapes = [
   };
   
   const getShape = key => {
-    const shape = shapes.find((elem, index) => {
-      return elem.name.toLowerCase() === key.toLowerCase();
-    });
-
+    let shape;
+    if (key) {
+      shape = shapes.find((elem, index) => {
+        return elem.name.toLowerCase() === key.toLowerCase();
+      });
+    }
     return shape;
   };
   
