@@ -18,7 +18,7 @@ const shapes = [
     {
       'name': 'Rectangle',
       'type': 'polygon',
-      'formula': 'polygon(10% 25%, 90% 25%, 90% 75%, 10% 75%)',
+      'formula': 'polygon(5% 15%, 95% 15%, 95% 85%, 5% 85%)',
       'vertices': 4,
       'edges': 4,
       'notes': 'A Rectangle is a four sided-polygon, having all the internal angles equal to 90 degrees. The two sides at each corner or vertex, meet at right angles. The opposite sides of the rectangle are equal in length which makes it different from a square.'
@@ -126,6 +126,14 @@ const shapes = [
       'vertices': 5,
       'edges': 5,
       'notes': 'A regular star pentagon, has five corner vertices and intersecting edges.'
+    },
+    {
+      'name': 'Tag',
+      'type': 'polygon',
+      'formula': 'polygon(68% 5%, 5% 5%, 5% 95%, 68% 95%, 95% 50%)',
+      'vertices': 5,
+      'edges': 5,
+      'notes': 'A custom structure that usually represents a Tag.'
     }
 ];
   

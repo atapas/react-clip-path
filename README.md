@@ -49,10 +49,12 @@ After import, we can now use it in any React component.
 ```js
 <Shape
     name="Circle"
+    id="circle-shape-id"
     width="300px"
     height="300px"
     showLabel={true}
-    showShadow={true}
+    showShadow={false}
+    handleClick={() => someFunction()}
 />
 ```
 ### Properties & Configuration
@@ -71,9 +73,9 @@ This section provides details about the properties(props).
   <tr>
     <td> id </td>
     <td> The unique identifier of the shape </td>
-    <td> No </td>
+    <td> Yes </td>
     <td>
-      Please pass a unique string as id. If no value is passed, the shape name is used as the id value.
+      Please pass any unique string as id.
     </td>
   </tr>
 
@@ -152,6 +154,14 @@ This section provides details about the properties(props).
     </td>
   </tr>
 
+  <tr>
+    <td> handleClick </td>
+    <td> Pass a function to call when user clicks on the shape. </td>
+    <td> No </td>
+    <td>
+      <code>handleClick={() => someFunction()}</code>
+    </td>
+  </tr>
 </table>
 
 </p>

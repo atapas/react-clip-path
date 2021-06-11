@@ -48,7 +48,7 @@ const Shape = props => {
     const formula = shapeInfo ? shapeInfo.formula : props.formula;
     const text = shapeInfo ? shapeInfo.name : props.text;
     const showLabel = props.showLabel;
-    const id = props.id || props.name;
+    const id = props.id;
     const handleClick = props.handleClick;
 
     return (
