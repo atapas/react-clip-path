@@ -13,20 +13,20 @@ const Shadow = styled.div`
     background-color: ${props => props.backgroundColor || '#00c4ff'};
     opacity: 0.25;
     position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
 `;
 
 const Component = styled.div`
     clip-path: ${props => props.formula};
     background-color: ${props => props.backgroundColor || '#00c4ff'};
     position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
 `;
 
 const Label = styled.span`

@@ -53,7 +53,7 @@ After import, we can now use it in any React component.
     width="300px"
     height="300px"
     showLabel={true}
-    showShadow={false}
+    showShadow={true}
     handleClick={() => someFunction()}
 />
 ```
@@ -81,10 +81,10 @@ This section provides details about the properties(props).
 
   <tr>
     <td> name </td>
-    <td> The shape Name </td>
+    <td> The Shape Name </td>
     <td> Yes </td>
     <td>
-  Supported Shapes(out-of-the-box) are, <code>circle</code>, <code>square</code>, <code>rectangle</code>, <code>rhombus</code>, <code>ellipse</code>, <code>triangle</code>, <code>parallelogram</code>, <code>trapezoid</code>, <code>pentagon</code>, <code>hexagon</code>, <code>heptagon</code>, <code>octagon</code>, <code>nonagon</code>, <code>decagon</code>, <code>cross</code>, <code>star</code>.
+  Supported Shapes(out-of-the-box) are, <code>Circle</code>, <code>Square</code>, <code>Rectangle</code>, <code>Rhombus</code>, <code>Ellipse</code>, <code>Triangle</code>, <code>Parallelogram</code>, <code>Trapezoid</code>, <code>Pentagon</code>, <code>Hexagon</code>, <code>Heptagon</code>, <code>Octagon</code>, <code>Nonagon</code>, <code>Decagon</code>, <code>Cross</code>, <code>Star</code>, <code>Tag</code>.
     </td>
   </tr>
 
