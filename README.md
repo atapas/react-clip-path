@@ -48,11 +48,13 @@ After import, we can now use it in any React component.
 
 ```js
 <Shape
-    type="circle"
+    name="Circle"
+    id="circle-shape-id"
     width="300px"
     height="300px"
     showLabel={true}
     showShadow={true}
+    handleClick={() => someFunction()}
 />
 ```
 ### Properties & Configuration
@@ -69,18 +71,27 @@ This section provides details about the properties(props).
   </tr>
 
   <tr>
-    <td> type </td>
-    <td> The shape type</td>
+    <td> id </td>
+    <td> The unique identifier of the shape </td>
     <td> Yes </td>
     <td>
-  Supported Shape types(out-of-the-box) are, <code>circle</code>, <code>square</code>, <code>rectangle</code>, <code>rhombus</code>, <code>ellipse</code>, <code>triangle</code>, <code>parallelogram</code>, <code>trapezoid</code>, <code>pentagon</code>, <code>hexagon</code>, <code>heptagon</code>, <code>octagon</code>, <code>nonagon</code>, <code>decagon</code>, <code>cross</code>, <code>star</code>.
+      Please pass any unique string as id.
+    </td>
+  </tr>
+
+  <tr>
+    <td> name </td>
+    <td> The Shape Name </td>
+    <td> Yes </td>
+    <td>
+  Supported Shapes(out-of-the-box) are, <code>Circle</code>, <code>Square</code>, <code>Rectangle</code>, <code>Rhombus</code>, <code>Ellipse</code>, <code>Triangle</code>, <code>Parallelogram</code>, <code>Trapezoid</code>, <code>Pentagon</code>, <code>Hexagon</code>, <code>Heptagon</code>, <code>Octagon</code>, <code>Nonagon</code>, <code>Decagon</code>, <code>Cross</code>, <code>Star</code>, <code>Tag</code>.
     </td>
   </tr>
 
   <tr>
     <td> formula </td>
     <td> The shape's clip-path formula. Please pass a CSS clip-path value using inset, circle, ellipse, polygon</td>
-    <td> Yes - It is required if type is not passed.  </td>
+    <td> Yes - It is required if name is not passed.  </td>
     <td>
       <ul>
         <li>circle(50% at 50% 50%)</li>
@@ -130,7 +141,7 @@ This section provides details about the properties(props).
     <td> Any text label about the shape </td>
     <td> No </td>
     <td>
-      The type name of the shape.
+      The label of the shape.
     </td>
   </tr>
 
@@ -143,6 +154,14 @@ This section provides details about the properties(props).
     </td>
   </tr>
 
+  <tr>
+    <td> handleClick </td>
+    <td> Pass a function to call when user clicks on the shape. </td>
+    <td> No </td>
+    <td>
+      <code>handleClick={() => someFunction()}</code>
+    </td>
+  </tr>
 </table>
 
 </p>
@@ -162,20 +181,22 @@ The `react-clip-path` depends on a `schema` file to get the shape information. Y
 Here is an example of the `circle` shape in the schema file,
 
 ```js
-'circle': {
-      'name': 'Circle',
-      'type': 'circle',
-      'formula': 'circle(50% at 50% 50%)',
-      'vertices': 0,
-      'edges': 0,
-      'notes': 'A circle is a round shaped figure that has no corners or edges. In geometry, a circle can be defined as a closed, two-dimensional curved shape.'
-    }
+{
+  'name': 'Circle',
+  'type': 'circle',
+  'formula': 'circle(50% at 50% 50%)',
+  'vertices': 0,
+  'edges': 0,
+  'notes': 'A circle is a round shaped figure that has no corners or edges. In geometry, a circle can be defined as a closed, two-dimensional curved shape.'
+}
 ```
 
 The same schema file also contains a few utility methods. You can import them as,
 
 ```js
-import { getAvailableShapeTypes, getShape } from 'react-clip-path/schema';
+import { getShape } from 'react-clip-path/schema';
+
+getShape('Circle'); // returns the details of the Circle shape.
 ```
 
 # 🏷️ License
